@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Symphony | Music Analytics</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --blush-pink: #F5D5E0;
+      --lavender-blue: #6667AB;
+      --royal-purple: #420D4B;
+      --deep-violet: #210635;
+      --light-bg: #ffffff;
+      --text-dark: #210635;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--blush-pink), var(--lavender-blue));
+      color: var(--text-dark);
+      font-family: "Poppins", sans-serif;
+      background-image: url('');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--light-bg);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-brand {
+      color: var(--royal-purple) !important;
+      font-weight: 600;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      color: var(--royal-purple) !important;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--deep-violet) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: rgba(255, 255, 255, 0);
+      border-bottom: 2px solid var(--lavender-blue);
+    }
+
+    .hero h2 {
+      color: var(--deep-violet);
+      font-size: 2.8em;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--royal-purple);
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    /* Transparent Info Card */
+    .info-card {
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(66, 13, 75, 0.3);
+      padding: 25px 30px;
+      margin-top: 30px;
+      text-align: left;
+      color: var(--deep-violet);
+      border: 1px solid rgba(102, 103, 171, 0.4);
+    }
+
+    .info-card b {
+      color: var(--royal-purple);
+    }
+
+    /* Year Cards */
+    .year-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .year-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(102, 103, 171, 0.6);
+      transition: opacity 0.3s ease;
+    }
+
+    .year-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(66, 13, 75, 0.4);
+    }
+
+    .year-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      z-index: 2;
+    }
+
+    /* Carousel Controls */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: var(--royal-purple);
+      border-radius: 50%;
+      padding: 15px;
+    }
+
+    footer {
+      background-color: var(--light-bg);
+      color: var(--royal-purple);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      border-top: 2px solid var(--lavender-blue);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Code Symphony Logo">
+        Code Symphony
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Trending</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Analytics Chart</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero mt-5">
+    <h2>Top 10 Songs of the Last 10 Years</h2>
+    <p>Explore the world’s most streamed and loved music — year by year.</p>
+
+    <!-- Transparent Info Card -->
+    <div class="container">
+      <div class="info-card">
+        <p>🎵 <b>Welcome to Global Music Analytics</b></p>
+        <p>
+          Discover the rhythm of the world’s favorite hits! Our platform brings you a curated list of the <b>Top 10 Songs from the last 5 years</b>, featuring tracks that ruled charts and hearts across the globe.
+        </p>
+        <p><b>Explore detailed insights including:</b></p>
+        <ul>
+          <li>🎤 <b>Artist Names</b> — Know who’s behind the magic.</li>
+          <li>⭐ <b>Global Ratings & Popularity Scores</b> — See how each song ranks worldwide.</li>
+          <li>📈 <b>Trends Over Time</b> — Witness how music tastes evolved through the years.</li>
+        </ul>
+        <p>
+          Whether you’re a music lover, data enthusiast, or just curious about global hits — this site lets you dive into
+          the soundscape of recent years with engaging analytics and visuals.
+        </p>
+        <p><b>Stay tuned, explore the beats, and relive the top tunes that shaped the world’s playlists!</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carousel -->
+  <div id="yearCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+    <div class="carousel-inner">
+
+      <!-- 2025 & 2024 -->
+      <div class="carousel-item active">
+        <div class="container my-5">
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+              <a href="year2025.html" class="text-decoration-none">
+                <div class="year-card" style="background-image:url('https://via.placeholder.com/600x300.png?text=2025');">
+                  <div class="year-overlay">2025</div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5">
+              <a href="year2024.html" class="text-decoration-none">
+                <div class="year-card" style="background-image:url('https://via.placeholder.com/600x300.png?text=2024');">
+                  <div class="year-overlay">2024</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Remaining years -->
+      <div class="carousel-item">
+        <div class="container my-5">
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+              <a href="year2023.html" class="text-decoration-none">
+                <div class="year-card" style="background-image:url('https://via.placeholder.com/600x300.png?text=2023');">
+                  <div class="year-overlay">2023</div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5">
+              <a href="year2022.html" class="text-decoration-none">
+                <div class="year-card" style="background-image:url('https://via.placeholder.com/600x300.png?text=2022');">
+                  <div class="year-overlay">2022</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more carousel items as before... -->
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#yearCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#yearCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <footer>
+    © 2025 Code Symphony | Crafted with 🎧 by Code Symphony Team
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
